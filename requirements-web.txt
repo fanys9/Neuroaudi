@@ -1,0 +1,6 @@
+# Dependencias para la interfaz web del experimento de audio
+# Instalar: pip install -r requirements-web.txt
+
+flask>=3.0.0
+keyboard>=0.13.5
+python-osc>=1.8.0
