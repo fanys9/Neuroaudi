@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experimento de audio — NeuroAudi</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Experimento de audio</h1>
+      <p class="subtitle">NeuroAudi · Entorno de pruebas</p>
+    </header>
+
+    <main class="main">
+      <section class="card">
+        <label for="nombre" class="label">Nombre del participante</label>
+        <input
+          type="text"
+          id="nombre"
+          class="input"
+          placeholder="Escriba el nombre"
+          autocomplete="off"
+          maxlength="120"
+        >
+        <p id="error-nombre" class="error" aria-live="polite" hidden></p>
+      </section>
+
+      <!-- Instrucciones visibles solo durante la prueba activa -->
+      <section id="instrucciones" class="card instrucciones" aria-live="polite" hidden>
+        <h2 class="instrucciones-titulo">Cómo responder</h2>
+        <p class="instrucciones-linea">Presiona <kbd>A</kbd> si el sonido viene de la <strong>izquierda</strong>.</p>
+        <p class="instrucciones-linea">Presiona <kbd>D</kbd> si el sonido viene de la <strong>derecha</strong>.</p>
+        <p id="respuesta-feedback" class="respuesta-feedback" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="card estado-card">
+        <span class="estado-label">Estado</span>
+        <div id="estado-indicator" class="estado-indicator estado-listo" aria-live="polite">
+          Listo
+        </div>
+      </section>
+
+      <section class="actions">
+        <button type="button" id="btn-iniciar" class="btn btn-primary">
+          Iniciar prueba
+        </button>
+        <button type="button" id="btn-detener" class="btn btn-danger" disabled>
+          Detener prueba
+        </button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Ejecución local · SuperCollider + OSC</p>
+    </footer>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
